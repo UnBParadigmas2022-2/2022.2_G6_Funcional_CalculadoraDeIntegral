@@ -1,19 +1,20 @@
 module Eval
-    ( eval,
+    ( evalExpr
     ) where
 
 import Language.Haskell.Interpreter
 
-eval = do
+-- evalExpr :: (MonadIO m, exceptions-0.10.4:Control.Monad.Catch.MonadMask m) => String -> m (Either InterpreterError (Double -> Double))
+evalExpr fExpr = do
     -- fExpr is a Haskell code supplied by your user as a String
-    let fExpr = "let f (x:y:_) = x && y in f"
     -- Create an interpreter that runs fExpr
     r <- runInterpreter $ do
             setImports ["Prelude"]
-            interpret fExpr (const True :: [Bool] -> Bool)
+            interpret fExpr (as :: Double -> Double)
     -- run it and get an interface to the function
     case r of
         Left err -> putStrLn $ "Ups... " ++ (show err)
         Right f  -> do
-            print $ f [True, False]
-            print $ f [True, True]
+            print $ f 10.0 
+    
+   

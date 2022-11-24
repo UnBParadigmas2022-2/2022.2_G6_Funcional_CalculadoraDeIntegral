@@ -1,13 +1,8 @@
 module NumericalMethods
-    (
-    -- ( trapezoidal,
+    ( trapezoidal,
     compositeTrapeizoidal
     ) where
 
-e = exp 1
-
--- fun :: Double -> Double
--- fun x = (x**2)   * (e**(-x))-- x^2e^-x dx
 
 trapezoidal :: Double -> Double -> (Double -> Double) -> Double
 trapezoidal a b fun = ((fun a) + (fun b)) * ((b-a)/2)

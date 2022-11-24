@@ -16,15 +16,8 @@ main = do
     r <- runInterpreter $ do
             setImports ["Prelude"]
             interpret fExpr (as :: Double -> Double)
-    -- run it and get an interface to the function
-    case r of
-        Left err -> putStrLn $ "Ups... " ++ (show err)
-        Right f  -> do
-            print $ f 10.0 
-            putStr (show (compositeTrapeizoidal 1 7 10000 f))
-    -- case r of
-    --     Left err -> putStrLn $ "Ups... " ++ (show err)
-    --     Right f  -> do
-    --         print $ f 10.0 
 
-    -- putStr (show (compositeTrapeizoidal 1 7 10000))
+    case r of
+        Left err -> putStrLn $ "Erro no parse... " ++ (show err)
+        Right f  -> do
+            putStr (show (compositeTrapeizoidal 1 7 10000 f))

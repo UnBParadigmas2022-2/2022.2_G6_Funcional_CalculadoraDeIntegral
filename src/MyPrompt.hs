@@ -7,9 +7,11 @@ module MyPrompt
 
 import System.IO
 
+printChoices :: [String] -> IO ()
 printChoices [] = putStrLn "\n----------------------------------------------------------------\n"
 printChoices (h:t) = putStrLn h >> printChoices t
 
+clearPrompt :: IO ()
 clearPrompt = putStrLn "\n\n\n\n----------------------------------------------------------------\n"
 
 

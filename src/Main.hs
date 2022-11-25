@@ -14,7 +14,9 @@ formatExpr = unpack . replace "e" "(exp 1)" . pack
 
 main :: IO ()
 main = do
-    printChoices ["CALCULADORA DE INTEGRAL\n", "Digite a expressão da integral:", "Ex. de expressão: (x**2) * e + 2\n"]
+    printChoices ["CALCULADORA DE INTEGRAL\n",
+                    "Digite a expressão da integral:",
+                    "Ex. de expressão: (x**2) * e + 2\n"]
     input_expr <- getLine 
     hFlush stdout
     clearPrompt
@@ -28,7 +30,10 @@ main = do
     case r of
         Left err -> putStrLn $ "Erro no parse... " ++ (show err)
         Right f  -> do
-            printChoices ["Escolha um método para calcular sua integral definida de a até b:", "0    <- Método do trapézio", "1    <- Método do trapézio composto", "2    <- Sair"]
+            printChoices ["Escolha um método para calcular sua integral definida de a até b:",
+                          "0    <- Método do trapézio",
+                          "1    <- Método do trapézio composto",
+                          "2    <- Sair"]
             
             c <- getChar
             hFlush stdout
@@ -68,6 +73,8 @@ main = do
                     putStr "\nResultado:" >> putStr  (show (compositeTrapeizoidal a b n f)) >> putChar '\n'
                 '2' -> putChar '\n' >> putStrLn "Saindo..." >> exitSuccess
 
-            putStrLn "--------------------------------------"    
+            putStrLn "Digite qualquer tecla para continuar..."    
+            c <- getChar
+            clearPrompt
     main
 

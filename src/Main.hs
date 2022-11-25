@@ -19,7 +19,7 @@ main = do
     input_expr <- getLine 
     hFlush stdout
     -- "e * x**2
-    
+
     let fExpr =   "let f x = " ++ (formatExpr input_expr) ++ " in f"
 
     r <- runInterpreter $ do
@@ -71,13 +71,6 @@ main = do
                     putStr "\nResultado:" >> putStr  (show (compositeTrapeizoidal a b n f)) >> putChar '\n'
                 '2' -> putChar '\n' >> putStrLn "Saindo..." >> exitSuccess
 
-            putStrLn "--------------------------------------"
-
-
-
-            -- putStr "Resultado: "
-            -- putStr  (show (compositeTrapeizoidal 1 7 10000 f)) >> putChar '\n'
-            -- putStrLn "-------------------"
-            
+            putStrLn "--------------------------------------"    
     main
 

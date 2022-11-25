@@ -53,11 +53,9 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 
 ## Outros 
 Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
-(i) Lições Aprendidas;
-(ii) Percepções;
-(iii) Contribuições e Fragilidades, e
-(iV) Trabalhos Futuros.
+(i) Lições Aprendidas = Paradigma Funcional
+(ii) Percepções = Facilidade em criar funções complexas em poucas linhas é muito bom!
 
 ## Fontes
-Referencie, adequadamente, as referências utilizadas.
-Indique ainda sobre fontes de leitura complementares.
+https://hackage.haskell.org/package/hint
+https://www.haskell.org/documentation/

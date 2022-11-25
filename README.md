@@ -16,8 +16,8 @@ Use referências, links, que permitam conhecer um pouco mais sobre o projeto.
 Capriche nessa seção, pois ela é a primeira a ser lida pelos interessados no projeto.
 
 ## Screenshots
-Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
-
+https://i.imgur.com/sa6VBAg.png
+https://i.imgur.com/AvwMBRD.png
 ## Instalação 
 **Linguagens**: Haskell<br>
 **Tecnologias**: GHCi,  Cabal  e Hint<br>
@@ -25,9 +25,15 @@ Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcioname
 Também é necessário instalar um módulo chamado Hint. <br />
 O comando para instalar o Hint é: ```cabal v2-install hint --lib```<br />
 ## Uso 
-Explique como usar seu projeto.
-Procure ilustrar em passos, com apoio de telas do software, seja com base na interface gráfica, seja com base no terminal.
-Nessa seção, deve-se revelar de forma clara sobre o funcionamento do software.
+Para utilizar o projeto deve se navegar para a pasta src, e depois rodar o comando ```ghci```<br />
+Após isso dar load na main ```:l Main.hs ```<br />
+Por fim digitar o comando ```main``` para rodar a função.<br /><br />
+O programa irá pedir primeiro para digitar a função a ser calculada da integral, deve se digitar utilizando a sintaxe do haskell, pode se utilizar também todas funcoes matematicas do haskell, por exemplo *sin*.<br />
+Foi adicionado também a constante de Euler, basta digitar *e*<br />
+Exemplo de expressão válida: ```(e**x) + 2*x``` ou ```sin x``` <br />
+Após isso deve se escolher um método para calcular a integral, sendo o do trapézio composto o mais preciso<br />
+Depois basta informar o A e B da integral definida e o número de iterações se for pedido!<br />
+
 
 ## Vídeo
 Adicione 1 ou mais vídeos com a execução do projeto.

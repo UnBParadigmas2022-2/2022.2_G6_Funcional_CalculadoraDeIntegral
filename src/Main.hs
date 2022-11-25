@@ -32,13 +32,15 @@ main = do
     case r of
         Left err -> putStrLn $ "Erro no parse... " ++ (show err)
         Right f  -> do
-            putStrLn "Escolha um método para calcular sua integral:"
+            putStrLn "Escolha um método para calcular sua integral definida de a até b:"
             putStrLn "0    <- Método do trapézio"
             putStrLn "1    <- Método do trapézio composto"
             putStrLn "2    <- Sair"
-
+            
             c <- getChar
             hFlush stdout
+            putStrLn "\n\n\n--------------------------------\n"
+
             case c of
                 '0' -> do 
                     putStrLn "\nDigite o valor de a:"

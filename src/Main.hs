@@ -32,11 +32,12 @@ main = do
             printChoices ["Escolha um método para calcular sua integral definida de a até b:",
                           "0    <- Método do trapézio",
                           "1    <- Método do trapézio composto",
-                          "2    <- Sair"]
+                          "2    <- Método de 1/3 de Simpson",
+                          "3    <- Sair"]
             
             c <- getChar
             hFlush stdout
-            putStrLn "\n\n\n--------------------------------\n"
+            clearScreen
 
             case c of
                 '0' -> do 
@@ -57,10 +58,19 @@ main = do
                     input_n <- prompt  "\nDigite o número de iterações:"
                     let  n= (read input_n :: Double)  
 
-                    putStr "\nResultado:" >> putStr  (show (compositeTrapeizoidal a b n f)) >> putChar '\n'
-                '2' -> putChar '\n' >> putStrLn "Saindo..." >> exitSuccess
+                    putStr "\nResultado: " >> putStr  (show (compositeTrapeizoidal a b n f)) >> putChar '\n'
+                '2' -> do 
+                    input_a <- prompt  "\nDigite o valor de a:"
+                    let a = (read input_a :: Double)
 
-            putStrLn "Digite qualquer tecla para continuar..."    
+                    input_b <- prompt  "\nDigite o valor de b:"
+                    let b = (read input_b :: Double)  
+
+                    putStr "\nResultado:" >> putStr  (show (simpsons13 a b f)) >> putChar '\n'
+                
+                '3' -> putChar '\n' >> putStrLn "Saindo..." >> exitSuccess
+
+            putStrLn "Digite qualquer tecla para continuar...\n"    
             c <- getChar
             clearScreen
     main

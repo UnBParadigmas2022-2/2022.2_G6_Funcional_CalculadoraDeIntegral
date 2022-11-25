@@ -8,13 +8,19 @@ import Data.Text(pack, unpack, replace)
 import System.Exit
 import System.IO
 
-replaceEuler :: String -> String
-replaceEuler = unpack . replace "e" "(exp 1)" . pack
+formatExpr :: String -> String
+formatExpr = unpack . replace "e" "(exp 1)" . pack
 
 main :: IO ()
 main = do
-   
-    let fExpr =   "let f x = " ++ replaceEuler "e * x**2 in f"
+    putStrLn "\nDigite a expressão da integral:"
+    putStrLn "\n Ex: (x**2) * 2"
+
+    input_expr <- getLine 
+    hFlush stdout
+    -- "e * x**2
+    
+    let fExpr =   "let f x = " ++ (formatExpr input_expr) ++ " in f"
 
     r <- runInterpreter $ do
             setImports ["Prelude"]

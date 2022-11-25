@@ -13,12 +13,15 @@ formatExpr = unpack . replace "e" "(exp 1)" . pack
 
 main :: IO ()
 main = do
-    putStrLn "\nDigite a expressão da integral:"
-    putStrLn "\n Ex: (x**2) * 2"
+    putStrLn "CALCULADORA DE INTEGRAL"
+    putStr "\nDigite a expressão da integral:"
+    putStrLn "\nEx. de expressão: (x**2) * 2\n"
 
     input_expr <- getLine 
     hFlush stdout
     -- "e * x**2
+
+    putStrLn "\n\n\n--------------------------------\n"
 
     let fExpr =   "let f x = " ++ (formatExpr input_expr) ++ " in f"
 
@@ -29,7 +32,6 @@ main = do
     case r of
         Left err -> putStrLn $ "Erro no parse... " ++ (show err)
         Right f  -> do
-            putStrLn "CALCULADORA DE INTEGRAL"
             putStrLn "Escolha um método para calcular sua integral:"
             putStrLn "0    <- Método do trapézio"
             putStrLn "1    <- Método do trapézio composto"

@@ -9,7 +9,7 @@ module MyIO
 import System.IO
 
 printChoices :: [String] -> IO ()
-printChoices [] = putStrLn "\n----------------------------------------------------------------\n"
+printChoices [] = putStrLn "----------------------------------------------------------------"
 printChoices (h:t) = putStrLn h >> printChoices t
 
 clearScreen :: IO ()

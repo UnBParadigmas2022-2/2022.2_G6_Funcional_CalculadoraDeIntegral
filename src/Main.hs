@@ -16,11 +16,10 @@ main :: IO ()
 main = do
     printChoices ["CALCULADORA DE INTEGRAL\n",
                     "Digite a expressão da integral:",
-                    "Ex. de expressão: (x**2) * e + 2\n"]
+                    "Ex. de expressão: (x**2) * e + 2"]
     input_expr <- getLine 
     hFlush stdout
     clearScreen
-
     let fExpr =   "let f x = " ++ (formatExpr input_expr) ++ " in f"
 
     r <- runInterpreter $ do

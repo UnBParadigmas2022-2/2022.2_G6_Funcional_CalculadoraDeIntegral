@@ -7,21 +7,17 @@ import Language.Haskell.Interpreter
 import Data.Text(pack, unpack, replace)
 import System.Exit
 import System.IO
+import MyPrompt
 
 formatExpr :: String -> String
 formatExpr = unpack . replace "e" "(exp 1)" . pack
 
 main :: IO ()
 main = do
-    putStrLn "CALCULADORA DE INTEGRAL"
-    putStr "\nDigite a expressão da integral:"
-    putStrLn "\nEx. de expressão: (x**2) * 2\n"
-
+    printChoices ["CALCULADORA DE INTEGRAL\n", "Digite a expressão da integral:", "Ex. de expressão: (x**2) * e + 2\n"]
     input_expr <- getLine 
     hFlush stdout
-    -- "e * x**2
-
-    putStrLn "\n\n\n--------------------------------\n"
+    clearPrompt
 
     let fExpr =   "let f x = " ++ (formatExpr input_expr) ++ " in f"
 
@@ -32,10 +28,7 @@ main = do
     case r of
         Left err -> putStrLn $ "Erro no parse... " ++ (show err)
         Right f  -> do
-            putStrLn "Escolha um método para calcular sua integral definida de a até b:"
-            putStrLn "0    <- Método do trapézio"
-            putStrLn "1    <- Método do trapézio composto"
-            putStrLn "2    <- Sair"
+            printChoices ["Escolha um método para calcular sua integral definida de a até b:", "0    <- Método do trapézio", "1    <- Método do trapézio composto", "2    <- Sair"]
             
             c <- getChar
             hFlush stdout

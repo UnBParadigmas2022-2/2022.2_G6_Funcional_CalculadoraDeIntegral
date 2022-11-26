@@ -1,4 +1,3 @@
-# RepositorioTemplate
 # Calculadora de Integral
 
 **Disciplina**: FGA0210 - PARADIGMAS DE PROGRAMAÇÃO - T01 <br>

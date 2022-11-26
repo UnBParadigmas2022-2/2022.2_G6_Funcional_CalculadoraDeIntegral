@@ -53,9 +53,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 
 ## Outros 
 Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
-(i) Lições Aprendidas = Paradigma Funcional
-(ii) Percepções = Facilidade em criar funções complexas em poucas linhas é muito bom!
-
+video está no repositório ou no link = https://unbbr.sharepoint.com/sites/cicero/_layouts/15/stream.aspx?id=%2Fsites%2Fcicero%2FDocumentos%20Compartilhados%2FGeneral%2FRecordings%2FNew%20channel%20meeting%2D20221125%5F215039%2DMeeting%20Recording%2Emp4
 ## Fontes
 https://hackage.haskell.org/package/hint
 https://www.haskell.org/documentation/
